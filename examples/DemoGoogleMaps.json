@@ -113,6 +113,39 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "PostToolsQARegister",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/javascript",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"FirstName\": \"Test002\",\n    \"LastName\": \"Automation002\",\n    \"UserName\": \"testuserautomation002\",\n    \"Password\": \"test001002\",\n    \"Email\": \"test@tester002.com\"\n}"
+				},
+				"url": {
+					"raw": "http://restapi.demoqa.com/customer/register",
+					"protocol": "http",
+					"host": [
+						"restapi",
+						"demoqa",
+						"com"
+					],
+					"path": [
+						"customer",
+						"register"
+					]
+				},
+				"description": "PostRequestToRegisterUser"
+			},
+			"response": []
 		}
 	]
 }
