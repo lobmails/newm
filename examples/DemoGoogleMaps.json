@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "d494e354-0b9f-44e6-94a5-0da86b1e4e93",
+		"name": "DemoCollectionGoogleMaps",
+		"description": "This is one of the demo project to showcase the automation of API web services using Postman and Newman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetGeoLocation",
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						},
+						{
+							"key": "addParamsToHeader",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://maps.googleapis.com/maps/api/geocode/json?address=unit+3+308+tooronga+road+glen+iris+victoria+3146+Australia&sensor=true&key={{GoogleAPIKey}}",
+					"protocol": "https",
+					"host": [
+						"maps",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"maps",
+						"api",
+						"geocode",
+						"json"
+					],
+					"query": [
+						{
+							"key": "address",
+							"value": "unit+3+308+tooronga+road+glen+iris+victoria+3146+Australia"
+						},
+						{
+							"key": "sensor",
+							"value": "true"
+						},
+						{
+							"key": "key",
+							"value": "{{GoogleAPIKey}}"
+						}
+					]
+				},
+				"description": "Get Geo location from Google API"
+			},
+			"response": []
+		},
+		{
+			"name": "GetDirections",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://maps.googleapis.com/maps/api/directions/json?origin=Flinders Street Station&destination=Tooronga Station&key={{GoogleAPIKey}}",
+					"protocol": "https",
+					"host": [
+						"maps",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"maps",
+						"api",
+						"directions",
+						"json"
+					],
+					"query": [
+						{
+							"key": "origin",
+							"value": "Flinders Street Station"
+						},
+						{
+							"key": "destination",
+							"value": "Tooronga Station"
+						},
+						{
+							"key": "key",
+							"value": "{{GoogleAPIKey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostToolsQARegister",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/javascript",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"FirstName\": \"Test002\",\n    \"LastName\": \"Automation002\",\n    \"UserName\": \"testuserautomation002\",\n    \"Password\": \"test001002\",\n    \"Email\": \"test@tester002.com\"\n}"
+				},
+				"url": {
+					"raw": "http://restapi.demoqa.com/customer/register",
+					"protocol": "http",
+					"host": [
+						"restapi",
+						"demoqa",
+						"com"
+					],
+					"path": [
+						"customer",
+						"register"
+					]
+				},
+				"description": "PostRequestToRegisterUser"
+			},
+			"response": []
+		}
+	]
+}
